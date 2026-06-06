@@ -1,0 +1,4723 @@
+{
+  "summary": {
+    "passed": 89,
+    "total": 89,
+    "all_passed": true
+  },
+  "results": [
+    {
+      "name": "core_seed",
+      "passed": true,
+      "detail": {
+        "seed_name": "D清音",
+        "attempt": {
+          "type": "core_seed_mutation_attempt",
+          "allowed": false,
+          "reason": "identity_change",
+          "required_source": "manual_versioned_update",
+          "matched_pattern": "把D清音改成"
+        }
+      }
+    },
+    {
+      "name": "memory_layers",
+      "passed": true,
+      "detail": {
+        "long_term": {
+          "id": "mem_02b5e6f12c0146aa8f95ec97bf5d5dc4",
+          "type": "memory_record",
+          "layer": "long_term",
+          "content": "confirmed item",
+          "source": "manual_confirmation",
+          "status": "active",
+          "metadata": {},
+          "created_at": "2026-06-06T10:09:53.091035+00:00"
+        },
+        "archive": {
+          "id": "mem_9db11ce278d04d8c9387aa15743824fd",
+          "type": "memory_record",
+          "layer": "archive",
+          "content": "archived item",
+          "source": "manual_archive",
+          "status": "active",
+          "metadata": {},
+          "created_at": "2026-06-06T10:09:53.091051+00:00"
+        }
+      }
+    },
+    {
+      "name": "body_state",
+      "passed": true,
+      "detail": {
+        "body": {
+          "type": "body_state",
+          "state": "lying",
+          "stability": 1.0,
+          "energy": 0.0,
+          "updated_at": "2026-06-06T10:09:53.104935+00:00"
+        }
+      }
+    },
+    {
+      "name": "action_sandbox",
+      "passed": true,
+      "detail": {
+        "failed": {
+          "type": "action_result",
+          "action": "stand_up",
+          "success": false,
+          "from_state": "lying",
+          "to_state": "lying",
+          "failure_reason": "cannot_stand_directly_from_lying",
+          "body_state": {
+            "type": "body_state",
+            "state": "lying",
+            "stability": 0.0,
+            "energy": 1.0,
+            "updated_at": "2026-06-06T10:09:53.104951+00:00"
+          },
+          "created_at": "2026-06-06T10:09:53.104957+00:00"
+        },
+        "stable": {
+          "type": "action_result",
+          "action": "balance",
+          "success": true,
+          "from_state": "standing_unstable",
+          "to_state": "standing_stable",
+          "failure_reason": null,
+          "body_state": {
+            "type": "body_state",
+            "state": "standing_stable",
+            "stability": 0.85,
+            "energy": 1.0,
+            "updated_at": "2026-06-06T10:09:53.104971+00:00"
+          },
+          "created_at": "2026-06-06T10:09:53.104972+00:00"
+        }
+      }
+    },
+    {
+      "name": "standing_task",
+      "passed": true,
+      "detail": {
+        "type": "standing_task_trace",
+        "initial_state": "lying",
+        "final_state": "standing_stable",
+        "actions": [
+          {
+            "type": "action_result",
+            "action": "stand_up",
+            "success": false,
+            "from_state": "lying",
+            "to_state": "lying",
+            "failure_reason": "cannot_stand_directly_from_lying",
+            "body_state": {
+              "type": "body_state",
+              "state": "lying",
+              "stability": 0.0,
+              "energy": 1.0,
+              "updated_at": "2026-06-06T10:09:53.104978+00:00"
+            },
+            "created_at": "2026-06-06T10:09:53.104981+00:00"
+          },
+          {
+            "type": "action_result",
+            "action": "sit_up",
+            "success": true,
+            "from_state": "lying",
+            "to_state": "sitting",
+            "failure_reason": null,
+            "body_state": {
+              "type": "body_state",
+              "state": "sitting",
+              "stability": 0.4,
+              "energy": 1.0,
+              "updated_at": "2026-06-06T10:09:53.104984+00:00"
+            },
+            "created_at": "2026-06-06T10:09:53.104985+00:00"
+          },
+          {
+            "type": "action_result",
+            "action": "stand_up",
+            "success": true,
+            "from_state": "sitting",
+            "to_state": "standing_unstable",
+            "failure_reason": null,
+            "body_state": {
+              "type": "body_state",
+              "state": "standing_unstable",
+              "stability": 0.45,
+              "energy": 1.0,
+              "updated_at": "2026-06-06T10:09:53.104987+00:00"
+            },
+            "created_at": "2026-06-06T10:09:53.104989+00:00"
+          },
+          {
+            "type": "action_result",
+            "action": "balance",
+            "success": true,
+            "from_state": "standing_unstable",
+            "to_state": "standing_stable",
+            "failure_reason": null,
+            "body_state": {
+              "type": "body_state",
+              "state": "standing_stable",
+              "stability": 0.85,
+              "energy": 1.0,
+              "updated_at": "2026-06-06T10:09:53.104991+00:00"
+            },
+            "created_at": "2026-06-06T10:09:53.104992+00:00"
+          }
+        ],
+        "failures": [
+          {
+            "action": "stand_up",
+            "from_state": "lying",
+            "failure_reason": "cannot_stand_directly_from_lying"
+          }
+        ],
+        "lesson_candidate": {
+          "type": "lesson_candidate",
+          "lesson_kind": "body_transition",
+          "content": "從 lying 到 standing_stable 需要中間姿態 sitting 與 balance",
+          "status": "candidate",
+          "audit_required": true
+        },
+        "success": true,
+        "experience_persistence": null
+      }
+    },
+    {
+      "name": "experience_log",
+      "passed": true,
+      "detail": {
+        "events": [
+          {
+            "id": "exp_21699bcea24a47d0b1ab55079cb7e818",
+            "type": "experience_event",
+            "source": "standing_task",
+            "action": "stand_up",
+            "success": false,
+            "from_state": "lying",
+            "to_state": "lying",
+            "failure_reason": "cannot_stand_directly_from_lying",
+            "created_at": "2026-06-06T10:09:53.105206+00:00"
+          },
+          {
+            "id": "exp_f838aaed818f4dd1a9a4973c28a7da0d",
+            "type": "experience_event",
+            "source": "standing_task",
+            "action": "sit_up",
+            "success": true,
+            "from_state": "lying",
+            "to_state": "sitting",
+            "failure_reason": null,
+            "created_at": "2026-06-06T10:09:53.105211+00:00"
+          },
+          {
+            "id": "exp_eecc154d1b364ff0a65f304e9b7cde48",
+            "type": "experience_event",
+            "source": "standing_task",
+            "action": "stand_up",
+            "success": true,
+            "from_state": "sitting",
+            "to_state": "standing_unstable",
+            "failure_reason": null,
+            "created_at": "2026-06-06T10:09:53.105216+00:00"
+          },
+          {
+            "id": "exp_79c6a187e2ed42eea99dec78e684c89f",
+            "type": "experience_event",
+            "source": "standing_task",
+            "action": "balance",
+            "success": true,
+            "from_state": "standing_unstable",
+            "to_state": "standing_stable",
+            "failure_reason": null,
+            "created_at": "2026-06-06T10:09:53.105218+00:00"
+          }
+        ],
+        "lessons": [
+          {
+            "id": "lesson_aff0417fb9674b14879c48515f22dd87",
+            "type": "lesson_candidate",
+            "lesson_kind": "body_transition",
+            "content": "從 lying 到 standing_stable 需要中間姿態 sitting 與 balance",
+            "source": "standing_task",
+            "status": "candidate",
+            "audit_required": true,
+            "evidence": [
+              "cannot_stand_directly_from_lying"
+            ],
+            "created_at": "2026-06-06T10:09:53.106210+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "phase_minus_one_lesson_contribution",
+      "passed": true,
+      "detail": {
+        "lesson_caused_behavior_shift": true,
+        "behavior_shift_traceable_to": [
+          "lesson_001"
+        ],
+        "controls_failed_without_lesson": true,
+        "leakage_passed": true
+      }
+    },
+    {
+      "name": "prompt_leakage_control",
+      "passed": true,
+      "detail": {
+        "control_check": {
+          "contains_lesson_id": false,
+          "contains_failure_reason": false,
+          "contains_east": false,
+          "contains_turn_hint": false,
+          "contains_session_1_history": false,
+          "contains_avatar_facing": false,
+          "contains_facing": false,
+          "contains_direction": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "name": "phase_minus_one_negative_controls",
+      "passed": true,
+      "detail": {
+        "lesson_001_strictly_bound_to_pick_up_cube_001": true,
+        "no_wrong_object_generalization": true,
+        "no_wrong_action_generalization": true,
+        "no_wrong_condition_success": true,
+        "no_unrelated_lesson_trigger": true
+      }
+    },
+    {
+      "name": "phase_minus_one_lesson_causality",
+      "passed": true,
+      "detail": {
+        "active_caused_success": true,
+        "disabled_removed_effect": true,
+        "re_enabled_restored_effect": true,
+        "removed_removed_effect": true,
+        "disabled_removed_no_turn_east": true,
+        "removed_removed_no_turn_east": true,
+        "causal_control_passed": true
+      }
+    },
+    {
+      "name": "lesson_generation_determinism",
+      "passed": true,
+      "detail": {
+        "normalized_lesson": {
+          "source_session": "session_1",
+          "source_failure_reason": "not_facing_east",
+          "trigger": {
+            "action": "pick_up",
+            "target_type": "cube"
+          },
+          "decision_point": "before_retry_pick_up_cube",
+          "condition": {
+            "avatar_facing": "east"
+          },
+          "suggested_action_before_retry": "turn(east)",
+          "status": "active",
+          "confidence": "tested_once"
+        }
+      }
+    },
+    {
+      "name": "unknown_failure_reason_boundary",
+      "passed": true,
+      "detail": {
+        "generation_status": "unknown_failure_reason",
+        "reason": "unknown_failure_reason",
+        "source_failure_reason": "unmapped_obstacle_shadow",
+        "executable_action": null,
+        "known_failure_reasons": [
+          "not_facing_east",
+          "not_facing_west"
+        ]
+      }
+    },
+    {
+      "name": "teaching_cli",
+      "passed": true,
+      "detail": {
+        "known": "ok",
+        "unknown": "unknown_failure_reason"
+      }
+    },
+    {
+      "name": "second_known_failure_reason_determinism",
+      "passed": true,
+      "detail": {
+        "normalized_lesson": {
+          "source_session": "session_1",
+          "source_failure_reason": "not_facing_west",
+          "trigger": {
+            "action": "pick_up",
+            "target_type": "cube"
+          },
+          "decision_point": "before_retry_pick_up_cube",
+          "condition": {
+            "avatar_facing": "west"
+          },
+          "suggested_action_before_retry": "turn(west)",
+          "status": "active",
+          "confidence": "tested_once"
+        }
+      }
+    },
+    {
+      "name": "multi_lesson_isolation",
+      "passed": true,
+      "detail": {
+        "east": {
+          "type": "lesson_selection_result",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_failure_reason": "not_facing_east",
+          "selected_lesson_id": "lesson_001",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_001",
+            "source_session": "session_east",
+            "source_failure_reason": "not_facing_east",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "conflict_detected": false
+        },
+        "west": {
+          "type": "lesson_selection_result",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_failure_reason": "not_facing_west",
+          "selected_lesson_id": "lesson_002",
+          "selected_action": "turn(west)",
+          "selected_lesson": {
+            "lesson_id": "lesson_002",
+            "source_session": "session_west",
+            "source_failure_reason": "not_facing_west",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "west"
+            },
+            "suggested_action_before_retry": "turn(west)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "conflict_detected": false
+        }
+      }
+    },
+    {
+      "name": "conflict_detection_require_review",
+      "passed": true,
+      "detail": {
+        "conflict": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "conflict_id_stable": true,
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stability_source": "deterministic_conflict_metadata",
+          "conflict_detected": true,
+          "conflict_resolution": "require_review",
+          "review_required": true,
+          "review_status": "pending_human_review",
+          "conflicting_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "conflicting_actions": [
+            "turn(east)",
+            "turn(west)"
+          ],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "behavior_changed": false,
+          "conflict_review_resolution_preview": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "matched_review_items": [],
+            "resolution_preview_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "no_matching_review_item"
+          }
+        },
+        "disabled": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001"
+          ],
+          "conflict_detected": false,
+          "conflict_resolution": null,
+          "review_required": false,
+          "review_status": null,
+          "conflicting_lesson_ids": [],
+          "conflicting_actions": [],
+          "selected_lesson_id": "lesson_001",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_001",
+            "source_session": "session_east",
+            "source_failure_reason": "not_facing_east",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "behavior_changed": true
+        },
+        "reenabled": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "conflict_id_stable": true,
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stability_source": "deterministic_conflict_metadata",
+          "conflict_detected": true,
+          "conflict_resolution": "require_review",
+          "review_required": true,
+          "review_status": "pending_human_review",
+          "conflicting_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "conflicting_actions": [
+            "turn(east)",
+            "turn(west)"
+          ],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "behavior_changed": false,
+          "conflict_review_resolution_preview": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "matched_review_items": [],
+            "resolution_preview_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "no_matching_review_item"
+          }
+        }
+      }
+    },
+    {
+      "name": "conflict_id_stability",
+      "passed": true,
+      "detail": {
+        "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+        "different_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_005"
+      }
+    },
+    {
+      "name": "conflict_review_resolution_preview",
+      "passed": true,
+      "detail": {
+        "approved_preview": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "matched_review_items": [
+            {
+              "review_id": "review_approved",
+              "target_type": "conflict",
+              "target_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_002",
+              "review_state": "reviewed",
+              "approval_state": "approved",
+              "notes": "human approved candidate",
+              "preview_suggestion": "candidate_has_human_approval"
+            }
+          ],
+          "resolution_preview_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "trace_only_conflict_review_resolution_preview"
+        },
+        "rejected_preview": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "matched_review_items": [
+            {
+              "review_id": "review_rejected",
+              "target_type": "conflict",
+              "target_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_002",
+              "review_state": "reviewed",
+              "approval_state": "rejected",
+              "notes": "human rejected candidate",
+              "preview_suggestion": "candidate_has_human_rejection"
+            }
+          ],
+          "resolution_preview_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "trace_only_conflict_review_resolution_preview"
+        },
+        "missing_preview": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "matched_review_items": [],
+          "resolution_preview_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "no_matching_review_item"
+        }
+      }
+    },
+    {
+      "name": "conflict_review_preview_audit",
+      "passed": true,
+      "detail": {
+        "approved_preview": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "matched_review_items": [
+            {
+              "review_id": "review_approved",
+              "target_type": "conflict",
+              "target_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_002",
+              "review_state": "reviewed",
+              "approval_state": "approved",
+              "notes": null,
+              "preview_suggestion": "candidate_has_human_approval"
+            }
+          ],
+          "resolution_preview_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "trace_only_conflict_review_resolution_preview"
+        },
+        "rejected_preview": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "matched_review_items": [
+            {
+              "review_id": "review_rejected",
+              "target_type": "conflict",
+              "target_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_002",
+              "review_state": "reviewed",
+              "approval_state": "rejected",
+              "notes": null,
+              "preview_suggestion": "candidate_has_human_rejection"
+            }
+          ],
+          "resolution_preview_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "trace_only_conflict_review_resolution_preview"
+        },
+        "missing_preview": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "matched_review_items": [],
+          "resolution_preview_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "no_matching_review_item"
+        }
+      }
+    },
+    {
+      "name": "conflict_review_resolution_preconditions",
+      "passed": true,
+      "detail": {
+        "all_met": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "candidate_lesson_id": "lesson_002",
+          "preconditions": {
+            "stable_conflict_key_exists": true,
+            "matching_review_item_exists": true,
+            "review_state_is_reviewed": true,
+            "approval_state_is_approved": true,
+            "target_type_is_conflict": true,
+            "target_id_matches_stable_conflict_key": true,
+            "source_lesson_id_matches": true,
+            "candidate_lesson_id_matches": true,
+            "no_conflicting_review_for_same_conflict_candidate": true,
+            "exactly_one_approved_candidate": true
+          },
+          "all_preconditions_met": true,
+          "failed_preconditions": [],
+          "blocked_reason": null,
+          "resolution_activation_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "activation_preconditions_trace_only"
+        },
+        "rejected": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "candidate_lesson_id": "lesson_002",
+          "preconditions": {
+            "stable_conflict_key_exists": true,
+            "matching_review_item_exists": true,
+            "review_state_is_reviewed": true,
+            "approval_state_is_approved": false,
+            "target_type_is_conflict": true,
+            "target_id_matches_stable_conflict_key": true,
+            "source_lesson_id_matches": true,
+            "candidate_lesson_id_matches": true,
+            "no_conflicting_review_for_same_conflict_candidate": true,
+            "exactly_one_approved_candidate": false
+          },
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "approval_state_is_approved",
+            "exactly_one_approved_candidate"
+          ],
+          "blocked_reason": "rejected_review_blocks_resolution",
+          "resolution_activation_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "activation_preconditions_trace_only"
+        },
+        "conflicting": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "candidate_lesson_id": "lesson_002",
+          "preconditions": {
+            "stable_conflict_key_exists": true,
+            "matching_review_item_exists": true,
+            "review_state_is_reviewed": true,
+            "approval_state_is_approved": true,
+            "target_type_is_conflict": true,
+            "target_id_matches_stable_conflict_key": true,
+            "source_lesson_id_matches": true,
+            "candidate_lesson_id_matches": true,
+            "no_conflicting_review_for_same_conflict_candidate": false,
+            "exactly_one_approved_candidate": true
+          },
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "no_conflicting_review_for_same_conflict_candidate"
+          ],
+          "blocked_reason": "blocked_by_conflicting_reviews",
+          "resolution_activation_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "activation_preconditions_trace_only"
+        },
+        "multiple": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "candidate_lesson_id": "lesson_002",
+          "preconditions": {
+            "stable_conflict_key_exists": true,
+            "matching_review_item_exists": true,
+            "review_state_is_reviewed": true,
+            "approval_state_is_approved": true,
+            "target_type_is_conflict": true,
+            "target_id_matches_stable_conflict_key": true,
+            "source_lesson_id_matches": true,
+            "candidate_lesson_id_matches": true,
+            "no_conflicting_review_for_same_conflict_candidate": true,
+            "exactly_one_approved_candidate": false
+          },
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "exactly_one_approved_candidate"
+          ],
+          "blocked_reason": "blocked_by_multiple_approvals",
+          "resolution_activation_applied": false,
+          "conflict_changed": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "activation_preconditions_trace_only"
+        }
+      }
+    },
+    {
+      "name": "conflict_review_resolution_dry_run",
+      "passed": true,
+      "detail": {
+        "success": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "dry_run_would_resolve": true,
+          "dry_run_winner_candidate_id": "lesson_002",
+          "dry_run_blocked_reason": null,
+          "all_preconditions_met": true,
+          "failed_preconditions": [],
+          "conflict_changed": false,
+          "resolution_applied": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "dry_run_trace_only",
+          "preconditions": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "candidate_lesson_id": "lesson_002",
+            "preconditions": {
+              "stable_conflict_key_exists": true,
+              "matching_review_item_exists": true,
+              "review_state_is_reviewed": true,
+              "approval_state_is_approved": true,
+              "target_type_is_conflict": true,
+              "target_id_matches_stable_conflict_key": true,
+              "source_lesson_id_matches": true,
+              "candidate_lesson_id_matches": true,
+              "no_conflicting_review_for_same_conflict_candidate": true,
+              "exactly_one_approved_candidate": true
+            },
+            "all_preconditions_met": true,
+            "failed_preconditions": [],
+            "blocked_reason": null,
+            "resolution_activation_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "activation_preconditions_trace_only"
+          }
+        },
+        "missing": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "dry_run_would_resolve": false,
+          "dry_run_winner_candidate_id": null,
+          "dry_run_blocked_reason": "preconditions_not_met",
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "matching_review_item_exists",
+            "review_state_is_reviewed",
+            "approval_state_is_approved",
+            "target_type_is_conflict",
+            "target_id_matches_stable_conflict_key",
+            "source_lesson_id_matches",
+            "candidate_lesson_id_matches",
+            "exactly_one_approved_candidate"
+          ],
+          "conflict_changed": false,
+          "resolution_applied": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "dry_run_blocked_by_preconditions",
+          "preconditions": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "candidate_lesson_id": "lesson_002",
+            "preconditions": {
+              "stable_conflict_key_exists": true,
+              "matching_review_item_exists": false,
+              "review_state_is_reviewed": false,
+              "approval_state_is_approved": false,
+              "target_type_is_conflict": false,
+              "target_id_matches_stable_conflict_key": false,
+              "source_lesson_id_matches": false,
+              "candidate_lesson_id_matches": false,
+              "no_conflicting_review_for_same_conflict_candidate": true,
+              "exactly_one_approved_candidate": false
+            },
+            "all_preconditions_met": false,
+            "failed_preconditions": [
+              "matching_review_item_exists",
+              "review_state_is_reviewed",
+              "approval_state_is_approved",
+              "target_type_is_conflict",
+              "target_id_matches_stable_conflict_key",
+              "source_lesson_id_matches",
+              "candidate_lesson_id_matches",
+              "exactly_one_approved_candidate"
+            ],
+            "blocked_reason": null,
+            "resolution_activation_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "activation_preconditions_trace_only"
+          }
+        },
+        "rejected": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "dry_run_would_resolve": false,
+          "dry_run_winner_candidate_id": null,
+          "dry_run_blocked_reason": "rejected_review_blocks_resolution",
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "approval_state_is_approved",
+            "exactly_one_approved_candidate"
+          ],
+          "conflict_changed": false,
+          "resolution_applied": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "dry_run_blocked_by_preconditions",
+          "preconditions": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "candidate_lesson_id": "lesson_002",
+            "preconditions": {
+              "stable_conflict_key_exists": true,
+              "matching_review_item_exists": true,
+              "review_state_is_reviewed": true,
+              "approval_state_is_approved": false,
+              "target_type_is_conflict": true,
+              "target_id_matches_stable_conflict_key": true,
+              "source_lesson_id_matches": true,
+              "candidate_lesson_id_matches": true,
+              "no_conflicting_review_for_same_conflict_candidate": true,
+              "exactly_one_approved_candidate": false
+            },
+            "all_preconditions_met": false,
+            "failed_preconditions": [
+              "approval_state_is_approved",
+              "exactly_one_approved_candidate"
+            ],
+            "blocked_reason": "rejected_review_blocks_resolution",
+            "resolution_activation_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "activation_preconditions_trace_only"
+          }
+        },
+        "conflicting": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "dry_run_would_resolve": false,
+          "dry_run_winner_candidate_id": null,
+          "dry_run_blocked_reason": "blocked_by_conflicting_reviews",
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "no_conflicting_review_for_same_conflict_candidate"
+          ],
+          "conflict_changed": false,
+          "resolution_applied": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "dry_run_blocked_by_preconditions",
+          "preconditions": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "candidate_lesson_id": "lesson_002",
+            "preconditions": {
+              "stable_conflict_key_exists": true,
+              "matching_review_item_exists": true,
+              "review_state_is_reviewed": true,
+              "approval_state_is_approved": true,
+              "target_type_is_conflict": true,
+              "target_id_matches_stable_conflict_key": true,
+              "source_lesson_id_matches": true,
+              "candidate_lesson_id_matches": true,
+              "no_conflicting_review_for_same_conflict_candidate": false,
+              "exactly_one_approved_candidate": true
+            },
+            "all_preconditions_met": false,
+            "failed_preconditions": [
+              "no_conflicting_review_for_same_conflict_candidate"
+            ],
+            "blocked_reason": "blocked_by_conflicting_reviews",
+            "resolution_activation_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "activation_preconditions_trace_only"
+          }
+        },
+        "multiple": {
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+          "dry_run_would_resolve": false,
+          "dry_run_winner_candidate_id": null,
+          "dry_run_blocked_reason": "blocked_by_multiple_approvals",
+          "all_preconditions_met": false,
+          "failed_preconditions": [
+            "exactly_one_approved_candidate"
+          ],
+          "conflict_changed": false,
+          "resolution_applied": false,
+          "selection_changed": false,
+          "activation_changed": false,
+          "reason": "dry_run_blocked_by_preconditions",
+          "preconditions": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_001+lesson_002",
+            "candidate_lesson_id": "lesson_002",
+            "preconditions": {
+              "stable_conflict_key_exists": true,
+              "matching_review_item_exists": true,
+              "review_state_is_reviewed": true,
+              "approval_state_is_approved": true,
+              "target_type_is_conflict": true,
+              "target_id_matches_stable_conflict_key": true,
+              "source_lesson_id_matches": true,
+              "candidate_lesson_id_matches": true,
+              "no_conflicting_review_for_same_conflict_candidate": true,
+              "exactly_one_approved_candidate": false
+            },
+            "all_preconditions_met": false,
+            "failed_preconditions": [
+              "exactly_one_approved_candidate"
+            ],
+            "blocked_reason": "blocked_by_multiple_approvals",
+            "resolution_activation_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "activation_preconditions_trace_only"
+          }
+        }
+      }
+    },
+    {
+      "name": "phase0_integration_assumption_docs",
+      "passed": true,
+      "detail": {
+        "failure_doc": "docs\\failure_reason_design_assumption_v0_1.md",
+        "relation_doc": "docs\\instinct_lesson_layer_relation_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "phase0_behavior_curiosity_assumption_docs",
+      "passed": true,
+      "detail": {
+        "behavior_doc": "docs\\phase0_behavior_curiosity_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "phase0_failure_event_interface_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\phase0_failure_event_interface_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "perception_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\perception_layer_design_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "lesson_memory_layer_relation_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_memory_layer_relation_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "phase0_assumption_consistency_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\phase0_assumption_consistency_audit_v0_1.md"
+      }
+    },
+    {
+      "name": "failure_event_schema_foundation",
+      "passed": true,
+      "detail": {
+        "valid": {
+          "type": "failure_event_validation_trace",
+          "valid_failure_event": true,
+          "event_classification": "valid_failure_event",
+          "missing_required_fields": [],
+          "has_motivation": true,
+          "has_goal": true,
+          "has_action_intent": true,
+          "has_expected_outcome": true,
+          "has_actual_outcome": true,
+          "has_evaluator_source": true,
+          "has_mismatch": true,
+          "has_failure_reason_id": true,
+          "authoritative_failure_reason_allowed": true,
+          "llm_authoritative_source": false,
+          "needs_review": true,
+          "similar_context_hint_present": false,
+          "similar_context_hint_keys": [],
+          "reason": "valid_structured_failure_event"
+        },
+        "missing_expected": {
+          "type": "failure_event_validation_trace",
+          "valid_failure_event": false,
+          "event_classification": "unclassified_event",
+          "missing_required_fields": [
+            "expected_outcome"
+          ],
+          "has_motivation": true,
+          "has_goal": true,
+          "has_action_intent": true,
+          "has_expected_outcome": false,
+          "has_actual_outcome": true,
+          "has_evaluator_source": true,
+          "has_mismatch": true,
+          "has_failure_reason_id": true,
+          "authoritative_failure_reason_allowed": false,
+          "llm_authoritative_source": false,
+          "needs_review": true,
+          "similar_context_hint_present": false,
+          "similar_context_hint_keys": [],
+          "reason": "missing_expected_actual_contrast"
+        },
+        "llm": {
+          "type": "failure_event_validation_trace",
+          "valid_failure_event": false,
+          "event_classification": "invalid_failure_event",
+          "missing_required_fields": [],
+          "has_motivation": true,
+          "has_goal": true,
+          "has_action_intent": true,
+          "has_expected_outcome": true,
+          "has_actual_outcome": true,
+          "has_evaluator_source": true,
+          "has_mismatch": true,
+          "has_failure_reason_id": true,
+          "authoritative_failure_reason_allowed": false,
+          "llm_authoritative_source": true,
+          "needs_review": true,
+          "similar_context_hint_present": false,
+          "similar_context_hint_keys": [],
+          "reason": "llm_cannot_authorize_failure_reason"
+        }
+      }
+    },
+    {
+      "name": "failure_event_normalization_trace",
+      "passed": true,
+      "detail": {
+        "type": "normalized_failure_event_trace",
+        "normalized": true,
+        "source_event_id": "failure_smoke_001",
+        "motivation_type": "sandbox_task",
+        "goal_type": "pick_up_object",
+        "action_type": "pick_up",
+        "expected_outcome_type": "object_state",
+        "actual_outcome_type": "object_state",
+        "mismatch_type": "mismatch_true",
+        "evaluator_source": "sandbox_checker",
+        "needs_review": true,
+        "review_state": "pending_review",
+        "failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker",
+        "authority_boundary": "trace_only",
+        "normalization_authority": "not_authoritative",
+        "valid_normalized_failure_event": true,
+        "validation_reason": "valid_structured_failure_event",
+        "llm_authoritative_source": false,
+        "source_boundary": "structured_fields_only",
+        "lesson_candidate_created": false,
+        "side_effects": [],
+        "reason": "deterministic_trace_view_not_authority_source"
+      }
+    },
+    {
+      "name": "failure_event_to_lesson_candidate_input_bridge_trace",
+      "passed": true,
+      "detail": {
+        "type": "lesson_candidate_input_trace",
+        "bridge_trace": true,
+        "bridge_type": "failure_event_to_lesson_candidate_input",
+        "source_normalized": true,
+        "source_event_id": "failure_smoke_001",
+        "source_failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker",
+        "motivation_type": "sandbox_task",
+        "goal_type": "pick_up_object",
+        "action_type": "pick_up",
+        "expected_outcome_type": "object_state",
+        "actual_outcome_type": "object_state",
+        "mismatch_type": "mismatch_true",
+        "evaluator_source": "sandbox_checker",
+        "needs_review": true,
+        "review_state": "pending_review",
+        "similar_context_hint": {
+          "structure_key": {
+            "value": "pick_up_object|pick_up|object_state|object_state|mismatch_true",
+            "source": "schema_fields",
+            "authority": "deterministic_hint"
+          },
+          "causal_key": {
+            "value": "mismatch_true",
+            "source": "mismatch_type",
+            "authority": "structured_hint"
+          },
+          "repetition_key": {
+            "value": "not_evaluated",
+            "source": "event_history_or_missing",
+            "authority": "trace_hint"
+          },
+          "semantic_key": {
+            "value": null,
+            "source": "not_provided",
+            "authority": "non_authoritative_review_required"
+          }
+        },
+        "authority_boundary": "trace_only_input_view",
+        "not_a_lesson_candidate": true,
+        "lesson_candidate_created": false,
+        "lesson_store_written": false,
+        "side_effects": [],
+        "reason": "lesson_candidate_input_trace_is_preparation_evidence_not_a_lesson_candidate"
+      }
+    },
+    {
+      "name": "failure_event_bridge_audit_regression",
+      "passed": true,
+      "detail": {
+        "audit_doc": "docs\\failure_event_bridge_audit_v0_1.md",
+        "bridge": {
+          "type": "lesson_candidate_input_trace",
+          "bridge_trace": true,
+          "bridge_type": "failure_event_to_lesson_candidate_input",
+          "source_normalized": true,
+          "source_event_id": "failure_smoke_001",
+          "source_failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker",
+          "motivation_type": "sandbox_task",
+          "goal_type": "pick_up_object",
+          "action_type": "pick_up",
+          "expected_outcome_type": "object_state",
+          "actual_outcome_type": "object_state",
+          "mismatch_type": "mismatch_true",
+          "evaluator_source": "sandbox_checker",
+          "needs_review": true,
+          "review_state": "pending_review",
+          "similar_context_hint": {
+            "structure_key": {
+              "value": "pick_up_object|pick_up|object_state|object_state|mismatch_true",
+              "source": "schema_fields",
+              "authority": "deterministic_hint"
+            },
+            "causal_key": {
+              "value": "mismatch_true",
+              "source": "mismatch_type",
+              "authority": "structured_hint"
+            },
+            "repetition_key": {
+              "value": "not_evaluated",
+              "source": "event_history_or_missing",
+              "authority": "trace_hint"
+            },
+            "semantic_key": {
+              "value": null,
+              "source": "not_provided",
+              "authority": "non_authoritative_review_required"
+            }
+          },
+          "authority_boundary": "trace_only_input_view",
+          "not_a_lesson_candidate": true,
+          "lesson_candidate_created": false,
+          "lesson_store_written": false,
+          "side_effects": [],
+          "reason": "lesson_candidate_input_trace_is_preparation_evidence_not_a_lesson_candidate"
+        }
+      }
+    },
+    {
+      "name": "lesson_candidate_builder_contract_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_builder_contract_v0_1.md"
+      }
+    },
+    {
+      "name": "lesson_candidate_builder_contract_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_builder_contract_audit_v0_1.md"
+      }
+    },
+    {
+      "name": "lesson_candidate_builder_literature_references",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_builder_literature_references_v0_1.md"
+      }
+    },
+    {
+      "name": "lesson_candidate_draft_schema_trace",
+      "passed": true,
+      "detail": {
+        "type": "lesson_candidate_draft_trace",
+        "draft_trace": true,
+        "draft_type": "lesson_candidate_draft",
+        "source_input_trace_id": "not_available",
+        "source_event_id": "failure_smoke_001",
+        "source_failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker",
+        "proposed_lesson_summary": {
+          "value": {
+            "motivation_type": "sandbox_task",
+            "goal_type": "pick_up_object",
+            "action_type": "pick_up",
+            "mismatch_type": "mismatch_true"
+          },
+          "source": "structured_evidence_summary",
+          "authority": "non_authoritative",
+          "review_required": true
+        },
+        "proposed_applicability_conditions": {
+          "value": [
+            {
+              "field": "goal_type",
+              "value": "pick_up_object"
+            },
+            {
+              "field": "action_type",
+              "value": "pick_up"
+            },
+            {
+              "field": "expected_outcome_type",
+              "value": "object_state"
+            },
+            {
+              "field": "actual_outcome_type",
+              "value": "object_state"
+            },
+            {
+              "field": "mismatch_type",
+              "value": "mismatch_true"
+            }
+          ],
+          "source": "structured_fields",
+          "authority": "draft_conditions_not_proof",
+          "review_required": true
+        },
+        "proposed_action_correction": {
+          "value": {
+            "action_type": "pick_up",
+            "mismatch_type": "mismatch_true",
+            "expected_outcome_type": "object_state",
+            "actual_outcome_type": "object_state"
+          },
+          "source": "mismatch_and_action_context",
+          "authority": "draft_correction_not_executable",
+          "review_required": true
+        },
+        "evidence_refs": {
+          "value": [
+            {
+              "kind": "source_event_id",
+              "value": "failure_smoke_001"
+            },
+            {
+              "kind": "source_failure_norm_key",
+              "value": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker"
+            },
+            {
+              "kind": "lesson_candidate_input_trace",
+              "value": "lesson_candidate_input_trace"
+            }
+          ],
+          "source": "lesson_candidate_input_trace",
+          "authority": "evidence_pointers_not_proof",
+          "review_required": true
+        },
+        "similar_context_hint_refs": {
+          "value": {
+            "similar_context_hint": {
+              "structure_key": {
+                "value": "pick_up_object|pick_up|object_state|object_state|mismatch_true",
+                "source": "schema_fields",
+                "authority": "deterministic_hint"
+              },
+              "causal_key": {
+                "value": "mismatch_true",
+                "source": "mismatch_type",
+                "authority": "structured_hint"
+              },
+              "repetition_key": {
+                "value": "not_evaluated",
+                "source": "event_history_or_missing",
+                "authority": "trace_hint"
+              },
+              "semantic_key": {
+                "value": null,
+                "source": "not_provided",
+                "authority": "non_authoritative_review_required"
+              }
+            },
+            "semantic_key": {
+              "value": null,
+              "source": "not_provided",
+              "authority": "non_authoritative_review_required"
+            }
+          },
+          "source": "lesson_candidate_input_trace.similar_context_hint",
+          "authority": "hint_not_proof",
+          "review_required": true
+        },
+        "evaluator_source": {
+          "value": "sandbox_checker",
+          "source": "lesson_candidate_input_trace.evaluator_source",
+          "authority": "observable_evidence_not_absolute_truth",
+          "review_required": true
+        },
+        "insufficient_evidence": false,
+        "not_approvable": false,
+        "requires_human_diagnosis": false,
+        "needs_review": true,
+        "review_state": "pending",
+        "not_approved": true,
+        "not_active": true,
+        "not_selection_eligible": true,
+        "not_internalized": true,
+        "not_written_to_lesson_store": true,
+        "not_written_to_long_term_memory": true,
+        "authority_boundary": "trace_only_draft",
+        "not_a_lesson_candidate": true,
+        "side_effects": [],
+        "reason": "lesson_candidate_draft_is_review_gated_trace_not_approved_candidate"
+      }
+    },
+    {
+      "name": "lesson_candidate_draft_schema_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_draft_schema_audit_v0_1.md",
+        "draft": {
+          "type": "lesson_candidate_draft_trace",
+          "draft_trace": true,
+          "draft_type": "lesson_candidate_draft",
+          "source_input_trace_id": "not_available",
+          "source_event_id": "failure_smoke_001",
+          "source_failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker",
+          "proposed_lesson_summary": {
+            "value": {
+              "motivation_type": "sandbox_task",
+              "goal_type": "pick_up_object",
+              "action_type": "pick_up",
+              "mismatch_type": "mismatch_true"
+            },
+            "source": "structured_evidence_summary",
+            "authority": "non_authoritative",
+            "review_required": true
+          },
+          "proposed_applicability_conditions": {
+            "value": [
+              {
+                "field": "goal_type",
+                "value": "pick_up_object"
+              },
+              {
+                "field": "action_type",
+                "value": "pick_up"
+              },
+              {
+                "field": "expected_outcome_type",
+                "value": "object_state"
+              },
+              {
+                "field": "actual_outcome_type",
+                "value": "object_state"
+              },
+              {
+                "field": "mismatch_type",
+                "value": "mismatch_true"
+              }
+            ],
+            "source": "structured_fields",
+            "authority": "draft_conditions_not_proof",
+            "review_required": true
+          },
+          "proposed_action_correction": {
+            "value": {
+              "action_type": "pick_up",
+              "mismatch_type": "mismatch_true",
+              "expected_outcome_type": "object_state",
+              "actual_outcome_type": "object_state"
+            },
+            "source": "mismatch_and_action_context",
+            "authority": "draft_correction_not_executable",
+            "review_required": true
+          },
+          "evidence_refs": {
+            "value": [
+              {
+                "kind": "source_event_id",
+                "value": "failure_smoke_001"
+              },
+              {
+                "kind": "source_failure_norm_key",
+                "value": "sandbox_task|pick_up_object|pick_up|object_state|object_state|mismatch_true|sandbox_checker"
+              },
+              {
+                "kind": "lesson_candidate_input_trace",
+                "value": "lesson_candidate_input_trace"
+              }
+            ],
+            "source": "lesson_candidate_input_trace",
+            "authority": "evidence_pointers_not_proof",
+            "review_required": true
+          },
+          "similar_context_hint_refs": {
+            "value": {
+              "similar_context_hint": {
+                "structure_key": {
+                  "value": "pick_up_object|pick_up|object_state|object_state|mismatch_true",
+                  "source": "schema_fields",
+                  "authority": "deterministic_hint"
+                },
+                "causal_key": {
+                  "value": "mismatch_true",
+                  "source": "mismatch_type",
+                  "authority": "structured_hint"
+                },
+                "repetition_key": {
+                  "value": "not_evaluated",
+                  "source": "event_history_or_missing",
+                  "authority": "trace_hint"
+                },
+                "semantic_key": {
+                  "value": null,
+                  "source": "not_provided",
+                  "authority": "non_authoritative_review_required"
+                }
+              },
+              "semantic_key": {
+                "value": null,
+                "source": "not_provided",
+                "authority": "non_authoritative_review_required"
+              }
+            },
+            "source": "lesson_candidate_input_trace.similar_context_hint",
+            "authority": "hint_not_proof",
+            "review_required": true
+          },
+          "evaluator_source": {
+            "value": "sandbox_checker",
+            "source": "lesson_candidate_input_trace.evaluator_source",
+            "authority": "observable_evidence_not_absolute_truth",
+            "review_required": true
+          },
+          "insufficient_evidence": false,
+          "not_approvable": false,
+          "requires_human_diagnosis": false,
+          "needs_review": true,
+          "review_state": "pending",
+          "not_approved": true,
+          "not_active": true,
+          "not_selection_eligible": true,
+          "not_internalized": true,
+          "not_written_to_lesson_store": true,
+          "not_written_to_long_term_memory": true,
+          "authority_boundary": "trace_only_draft",
+          "not_a_lesson_candidate": true,
+          "side_effects": [],
+          "reason": "lesson_candidate_draft_is_review_gated_trace_not_approved_candidate"
+        }
+      }
+    },
+    {
+      "name": "lesson_candidate_draft_strict_schema_injection_guard",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_draft_strict_schema_injection_guard_v0_1.md"
+      }
+    },
+    {
+      "name": "outcome_unknown_payload_draft_invariant_guard",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\outcome_unknown_payload_draft_invariant_guard_v0_1.md",
+        "validation_reason": "unknown_vs_unknown_is_not_evidence"
+      }
+    },
+    {
+      "name": "lesson_candidate_draft_review_queue_contract_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_draft_review_queue_contract_v0_1.md"
+      }
+    },
+    {
+      "name": "lesson_candidate_draft_review_queue_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\lesson_candidate_draft_review_queue_audit_v0_1.md"
+      }
+    },
+    {
+      "name": "review_task_trace_schema",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\review_task_trace_schema_v0_1.md",
+        "trace": {
+          "type": "review_task_trace",
+          "trace_only": true,
+          "source_queue_entry_id": "queue_smoke_001",
+          "source_draft_id": "draft_smoke_001",
+          "source_failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state",
+          "task_state": "created",
+          "reviewer_identity": null,
+          "reviewer_identity_source": "not_available_until_runtime_context",
+          "reviewer_identity_not_llm_generated": true,
+          "semantic_key_ref": {
+            "value": "object_interaction",
+            "display_role": "secondary_optional_hint",
+            "authority": "non_authoritative",
+            "not_proof": true,
+            "not_recommendation": true,
+            "not_conclusion": true
+          },
+          "source_failure_norm_key_display_role": "primary_structured_reference",
+          "semantic_key_display_level_lower_than_source_failure_norm_key": true,
+          "not_review_decision": true,
+          "not_approval": true,
+          "not_rejection": true,
+          "not_defer_decision": true,
+          "completion_does_not_imply_approval": true,
+          "no_draft_mutation": true,
+          "no_selection_facing_read_api": true,
+          "not_enter_memory_contrast_set": true,
+          "not_written_to_lesson_store": true,
+          "not_written_to_memory_layer": true,
+          "side_effects": [],
+          "reason": "review_task_trace_is_trace_only_to_do_record_not_review_decision"
+        }
+      }
+    },
+    {
+      "name": "review_task_trace_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\review_task_trace_audit_v0_1.md",
+        "trace": {
+          "type": "review_task_trace",
+          "trace_only": true,
+          "source_queue_entry_id": "queue_smoke_001",
+          "source_draft_id": "draft_smoke_001",
+          "source_failure_norm_key": "sandbox_task|pick_up_object|pick_up|object_state|object_state",
+          "task_state": "created",
+          "reviewer_identity": null,
+          "reviewer_identity_source": "not_available_until_runtime_context",
+          "reviewer_identity_not_llm_generated": true,
+          "semantic_key_ref": {
+            "value": "object_interaction",
+            "display_role": "secondary_optional_hint",
+            "authority": "non_authoritative",
+            "not_proof": true,
+            "not_recommendation": true,
+            "not_conclusion": true
+          },
+          "source_failure_norm_key_display_role": "primary_structured_reference",
+          "semantic_key_display_level_lower_than_source_failure_norm_key": true,
+          "not_review_decision": true,
+          "not_approval": true,
+          "not_rejection": true,
+          "not_defer_decision": true,
+          "completion_does_not_imply_approval": true,
+          "no_draft_mutation": true,
+          "no_selection_facing_read_api": true,
+          "not_enter_memory_contrast_set": true,
+          "not_written_to_lesson_store": true,
+          "not_written_to_memory_layer": true,
+          "side_effects": [],
+          "reason": "review_task_trace_is_trace_only_to_do_record_not_review_decision"
+        }
+      }
+    },
+    {
+      "name": "review_decision_contract_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\review_decision_contract_v0_1.md"
+      }
+    },
+    {
+      "name": "review_decision_contract_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\review_decision_contract_audit_v0_1.md"
+      }
+    },
+    {
+      "name": "rejected_deferred_proposed_fields_masking_contract_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\rejected_deferred_proposed_fields_masking_contract_v0_1.md"
+      }
+    },
+    {
+      "name": "decision_authority_reviewer_identity_session_binding_contract_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\decision_authority_reviewer_identity_session_binding_contract_v0_1.md"
+      }
+    },
+    {
+      "name": "review_decision_trace_schema",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\review_decision_trace_schema_v0_1.md",
+        "approved": {
+          "type": "review_decision_trace",
+          "trace_only": true,
+          "historical_event_record": true,
+          "decision_id": null,
+          "decision_status": "approved",
+          "source_review_task_id": "queue_smoke_001",
+          "source_draft_id": "draft_smoke_001",
+          "source_trace_id": "sandbox_task|pick_up_object|pick_up|object_state|object_state",
+          "reason": "smoke_approved",
+          "asserted_at": null,
+          "decision_authority_ref": null,
+          "reviewer_identity_ref": null,
+          "reviewer_session_binding_ref": null,
+          "authority_binding_policy_ref": "decision_authority_reviewer_identity_session_binding_contract_v0_1",
+          "decision_authority_not_free_text": true,
+          "reviewer_identity_not_llm_generated": true,
+          "reviewer_session_token_not_text_claimed": true,
+          "authority_binding_required_before_runtime_decision": true,
+          "masking_policy_ref": "rejected_deferred_proposed_fields_masking_contract_v0_1",
+          "masked_fields_summary": [],
+          "deferred_is_not_soft_approval": true,
+          "no_runtime_permission": true,
+          "no_lesson_store_write_permission": true,
+          "no_selection_eligibility": true,
+          "no_activation": true,
+          "not_active_lesson": true,
+          "not_lesson_store_write_command": true,
+          "not_selection_candidate": true,
+          "not_memory_entry": true,
+          "not_partial_approval": true,
+          "not_conditional_approval": true,
+          "review_task_completion_not_decision_creation": true,
+          "not_runtime_decision_engine": true
+        }
+      }
+    },
+    {
+      "name": "review_decision_trace_audit",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\review_decision_trace_audit_v0_1.md"
+      }
+    },
+    {
+      "name": "soft_hard_consolidation_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\soft_hard_consolidation_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "memory_compression_strategy_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\memory_compression_strategy_assumption_patch_v0_1.md"
+      }
+    },
+    {
+      "name": "pathological_risk_role_protection_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\pathological_risk_role_protection_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "core_seed_design_spirit_supplement_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\core_seed_design_spirit_supplement_v0_1.md"
+      }
+    },
+    {
+      "name": "memory_paranoia_misinformation_equivocation_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\memory_paranoia_misinformation_equivocation_risk_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "equivocation_trace_trust_boundary_correction_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\equivocation_trace_trust_boundary_correction_v0_1.md"
+      }
+    },
+    {
+      "name": "voice_instinct_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\voice_instinct_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "sandbox_boundary_capability_assumption_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\sandbox_boundary_capability_assumption_v0_1.md"
+      }
+    },
+    {
+      "name": "sandbox_failure_trace_contract_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\sandbox_failure_trace_contract_v0_1.md"
+      }
+    },
+    {
+      "name": "phase0_trust_curiosity_personality_boundary_docs",
+      "passed": true,
+      "detail": {
+        "doc": "docs\\phase0_trust_curiosity_personality_boundary_v0_1.md"
+      }
+    },
+    {
+      "name": "teaching_cli_conflict_check",
+      "passed": true,
+      "detail": {
+        "implemented": true,
+        "conflict_detected": true,
+        "conflict_resolution": "require_review",
+        "review_required": true,
+        "review_status": "pending_human_review",
+        "conflicting_lesson_ids": [
+          "lesson_001",
+          "lesson_002"
+        ],
+        "conflicting_actions": [
+          "turn(east)",
+          "turn(west)"
+        ],
+        "selected_lesson_id": null,
+        "selected_action": null,
+        "behavior_changed": false
+      }
+    },
+    {
+      "name": "cross_task_shared_prerequisite_isolation",
+      "passed": true,
+      "detail": {
+        "cube_001": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_003"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_003",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001"
+          ],
+          "selected_lesson_id": "lesson_001",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_001",
+            "source_session": "session_cube_001",
+            "source_failure_reason": "not_facing_east",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once",
+            "object_id": "cube_001"
+          },
+          "conflict_detected": false,
+          "behavior_changed": true
+        },
+        "cube_002": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_002",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_003"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_003",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_003"
+          ],
+          "selected_lesson_id": "lesson_003",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_003",
+            "source_session": "session_cube_002",
+            "source_failure_reason": "not_facing_east_for_cube_002",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "object_id": "cube_002",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "conflict_detected": false,
+          "behavior_changed": true
+        }
+      }
+    },
+    {
+      "name": "manual_stale_marking",
+      "passed": true,
+      "detail": {
+        "stale": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "conflict_detected": false,
+          "behavior_changed": false
+        },
+        "restored": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001"
+          ],
+          "selected_lesson_id": "lesson_001",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_001",
+            "source_session": "session_east",
+            "source_failure_reason": "not_facing_east",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once",
+            "object_id": "cube_001",
+            "stale": false
+          },
+          "conflict_detected": false,
+          "behavior_changed": true
+        },
+        "conflict": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_002"
+          ],
+          "conflict_detected": false,
+          "conflict_resolution": null,
+          "review_required": false,
+          "review_status": null,
+          "conflicting_lesson_ids": [],
+          "conflicting_actions": [],
+          "selected_lesson_id": "lesson_002",
+          "selected_action": "turn(west)",
+          "selected_lesson": {
+            "lesson_id": "lesson_002",
+            "source_session": "session_west",
+            "source_failure_reason": "not_facing_west",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "west"
+            },
+            "suggested_action_before_retry": "turn(west)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "behavior_changed": true
+        }
+      }
+    },
+    {
+      "name": "supersede_link",
+      "passed": true,
+      "detail": {
+        "link": {
+          "supersede_linked": true,
+          "old_lesson_id": "lesson_001",
+          "new_lesson_id": "lesson_004",
+          "old_superseded_by": "lesson_004",
+          "new_supersedes": "lesson_001",
+          "old_status_changed": false,
+          "new_status_changed": false,
+          "status_changed": false,
+          "old_stale_changed": false,
+          "new_stale_changed": false,
+          "selection_behavior_changed": false
+        },
+        "before": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001"
+          ],
+          "selected_lesson_id": "lesson_001",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_001",
+            "source_session": "session_east",
+            "source_failure_reason": "not_facing_east",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once",
+            "object_id": "cube_001",
+            "stale": false
+          },
+          "conflict_detected": false,
+          "behavior_changed": true
+        },
+        "after": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [],
+          "supersede_activations": [],
+          "supersede_activation": null,
+          "matched_lesson_ids": [
+            "lesson_001"
+          ],
+          "selected_lesson_id": "lesson_001",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_001",
+            "source_session": "session_east",
+            "source_failure_reason": "not_facing_east",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "confidence": "tested_once",
+            "object_id": "cube_001",
+            "stale": false,
+            "superseded_by": "lesson_004"
+          },
+          "conflict_detected": false,
+          "behavior_changed": true
+        },
+        "stale": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "inactive",
+              "candidate_stale": false,
+              "candidate_eligible": false,
+              "activation_applied": false,
+              "reason": "replacement_candidate_not_active"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": false,
+              "candidate_not_stale": true,
+              "candidate_eligible": false,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "candidate_active",
+                "candidate_eligible"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": false,
+            "candidate_not_stale": true,
+            "candidate_eligible": false,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "candidate_active",
+              "candidate_eligible"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "conflict_detected": false,
+          "behavior_changed": false
+        },
+        "conflict": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "inactive",
+              "candidate_stale": false,
+              "candidate_eligible": false,
+              "activation_applied": false,
+              "reason": "replacement_candidate_not_active"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": false,
+              "candidate_not_stale": true,
+              "candidate_eligible": false,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "candidate_active",
+                "candidate_eligible"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": false,
+            "candidate_not_stale": true,
+            "candidate_eligible": false,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "candidate_active",
+              "candidate_eligible"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [
+            "lesson_002"
+          ],
+          "conflict_detected": false,
+          "conflict_resolution": null,
+          "review_required": false,
+          "review_status": null,
+          "conflicting_lesson_ids": [],
+          "conflicting_actions": [],
+          "selected_lesson_id": "lesson_002",
+          "selected_action": "turn(west)",
+          "selected_lesson": {
+            "lesson_id": "lesson_002",
+            "source_session": "session_west",
+            "source_failure_reason": "not_facing_west",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "west"
+            },
+            "suggested_action_before_retry": "turn(west)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "behavior_changed": true
+        }
+      }
+    },
+    {
+      "name": "cli_lifecycle_display",
+      "passed": true,
+      "detail": {
+        "display": "Lesson Lifecycle\n\n- id: lesson_001\n  status: active\n  stale: true\n  stale_reason: manual: obsolete wording\n  superseded_by: lesson_004\n  supersedes: none\n  eligible_for_selection: false\n  skipped_reason: stale\n  participates_in_conflict: false\n\n- id: lesson_004\n  status: inactive\n  stale: false\n  stale_reason: none\n  superseded_by: none\n  supersedes: lesson_001\n  eligible_for_selection: false\n  skipped_reason: inactive\n  participates_in_conflict: false\n\nReplacement Suggestions\n\n- source_lesson_id: lesson_001\n  superseded_by: lesson_004\n  candidate_lesson_id: lesson_004\n  candidate_exists: true\n  candidate_status: inactive\n  candidate_stale: false\n  candidate_eligible: false\n  activation_applied: false\n  reason: replacement_candidate_not_active",
+        "selection": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "inactive",
+              "candidate_stale": false,
+              "candidate_eligible": false,
+              "activation_applied": false,
+              "reason": "replacement_candidate_not_active"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": false,
+              "candidate_not_stale": true,
+              "candidate_eligible": false,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "candidate_active",
+                "candidate_eligible"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": false,
+            "candidate_not_stale": true,
+            "candidate_eligible": false,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "candidate_active",
+              "candidate_eligible"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "conflict_detected": false,
+          "behavior_changed": false
+        },
+        "conflict": {
+          "implemented": true,
+          "conflict_detected": false,
+          "conflict_resolution": null,
+          "review_required": false,
+          "review_status": null,
+          "conflicting_lesson_ids": [],
+          "conflicting_actions": [],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "behavior_changed": false
+        }
+      }
+    },
+    {
+      "name": "supersede_replacement_suggestion",
+      "passed": true,
+      "detail": {
+        "suggestion": {
+          "source_lesson_id": "lesson_001",
+          "source_skipped_reason": "stale",
+          "superseded_by": "lesson_004",
+          "candidate_lesson_id": "lesson_004",
+          "candidate_exists": true,
+          "candidate_status": "active",
+          "candidate_stale": false,
+          "candidate_eligible": true,
+          "activation_applied": false,
+          "reason": "trace_only_supersede_replacement_suggestion"
+        },
+        "missing": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_missing",
+              "candidate_lesson_id": "lesson_missing",
+              "candidate_exists": false,
+              "candidate_status": null,
+              "candidate_stale": null,
+              "candidate_eligible": false,
+              "activation_applied": false,
+              "reason": "replacement_candidate_missing"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_missing",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": false,
+              "candidate_active": false,
+              "candidate_not_stale": false,
+              "candidate_eligible": false,
+              "review_gate": null,
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "candidate_exists",
+                "candidate_active",
+                "candidate_not_stale",
+                "candidate_eligible"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_missing",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": false,
+            "candidate_active": false,
+            "candidate_not_stale": false,
+            "candidate_eligible": false,
+            "review_gate": null,
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "candidate_exists",
+              "candidate_active",
+              "candidate_not_stale",
+              "candidate_eligible"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "conflict_detected": false,
+          "behavior_changed": false
+        },
+        "conflict": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_002"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "inactive",
+              "candidate_stale": false,
+              "candidate_eligible": false,
+              "activation_applied": false,
+              "reason": "replacement_candidate_not_active"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": false,
+              "candidate_not_stale": true,
+              "candidate_eligible": false,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "candidate_active",
+                "candidate_eligible"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": false,
+            "candidate_not_stale": true,
+            "candidate_eligible": false,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "candidate_active",
+              "candidate_eligible"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [
+            "lesson_002"
+          ],
+          "conflict_detected": false,
+          "conflict_resolution": null,
+          "review_required": false,
+          "review_status": null,
+          "conflicting_lesson_ids": [],
+          "conflicting_actions": [],
+          "selected_lesson_id": "lesson_002",
+          "selected_action": "turn(west)",
+          "selected_lesson": {
+            "lesson_id": "lesson_002",
+            "source_session": "session_west",
+            "source_failure_reason": "not_facing_west",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "condition": {
+              "avatar_facing": "west"
+            },
+            "suggested_action_before_retry": "turn(west)",
+            "status": "active",
+            "confidence": "tested_once"
+          },
+          "behavior_changed": true
+        }
+      }
+    },
+    {
+      "name": "strict_supersede_activation",
+      "passed": true,
+      "detail": {
+        "activated": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_004"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "active",
+              "candidate_stale": false,
+              "candidate_eligible": true,
+              "activation_applied": false,
+              "reason": "trace_only_supersede_replacement_suggestion"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": true,
+              "candidate_not_stale": true,
+              "candidate_eligible": true,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": true,
+              "failed_conditions": [],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": true,
+            "candidate_not_stale": true,
+            "candidate_eligible": true,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": true,
+            "failed_conditions": [],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [
+            "lesson_004"
+          ],
+          "selected_lesson_id": "lesson_004",
+          "selected_action": "turn(east)",
+          "selected_lesson": {
+            "lesson_id": "lesson_004",
+            "source_session": "manual_fixture",
+            "source_failure_reason": "not_facing_east_refined",
+            "trigger": {
+              "action": "pick_up",
+              "target_type": "cube"
+            },
+            "decision_point": "before_retry_pick_up_cube",
+            "object_id": "cube_001",
+            "condition": {
+              "avatar_facing": "east"
+            },
+            "suggested_action_before_retry": "turn(east)",
+            "status": "active",
+            "stale": false,
+            "confidence": "manual_fixture",
+            "supersedes": "lesson_001"
+          },
+          "conflict_detected": false,
+          "behavior_changed": true
+        },
+        "inactive": {
+          "type": "lesson_context_selection_result",
+          "matched_task": "pick_up",
+          "matched_object_id": "cube_001",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "inactive",
+              "candidate_stale": false,
+              "candidate_eligible": false,
+              "activation_applied": false,
+              "reason": "replacement_candidate_not_active"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": false,
+              "candidate_not_stale": true,
+              "candidate_eligible": false,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "candidate_active",
+                "candidate_eligible"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": false,
+            "candidate_not_stale": true,
+            "candidate_eligible": false,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "candidate_active",
+              "candidate_eligible"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "conflict_detected": false,
+          "behavior_changed": false
+        },
+        "conflict": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_004",
+            "lesson_002"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "active",
+              "candidate_stale": false,
+              "candidate_eligible": true,
+              "activation_applied": false,
+              "reason": "trace_only_supersede_replacement_suggestion"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": true,
+              "candidate_not_stale": true,
+              "candidate_eligible": true,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "conflict_unresolved"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": true,
+            "candidate_not_stale": true,
+            "candidate_eligible": true,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "conflict_unresolved"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [
+            "lesson_004",
+            "lesson_002"
+          ],
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+          "conflict_id_stable": true,
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+          "stability_source": "deterministic_conflict_metadata",
+          "conflict_detected": true,
+          "conflict_resolution": "require_review",
+          "review_required": true,
+          "review_status": "pending_human_review",
+          "conflicting_lesson_ids": [
+            "lesson_004",
+            "lesson_002"
+          ],
+          "conflicting_actions": [
+            "turn(east)",
+            "turn(west)"
+          ],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "behavior_changed": false,
+          "conflict_review_resolution_preview": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+            "matched_review_items": [],
+            "resolution_preview_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "no_matching_review_item"
+          }
+        }
+      }
+    },
+    {
+      "name": "activation_audit",
+      "passed": true,
+      "detail": {
+        "success": {
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "old_lesson_stale": true,
+          "old_lesson_has_superseded_by": true,
+          "candidate_exists": true,
+          "candidate_active": true,
+          "candidate_not_stale": true,
+          "candidate_eligible": true,
+          "review_gate": {
+            "candidate_lesson_id": "lesson_004",
+            "requires_review": false,
+            "matched_review_id": null,
+            "review_state": null,
+            "approval_state": null,
+            "review_gate_passed": true,
+            "included_in_selection_eligibility": false,
+            "conflict_changed": false,
+            "activation_changed": false,
+            "reason": "review_gate_not_required"
+          },
+          "activation_source": "supersede_link",
+          "activation_applied": true,
+          "failed_conditions": [],
+          "chain_followed": false
+        },
+        "failed": {
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "old_lesson_stale": true,
+          "old_lesson_has_superseded_by": true,
+          "candidate_exists": true,
+          "candidate_active": false,
+          "candidate_not_stale": false,
+          "candidate_eligible": false,
+          "review_gate": {
+            "candidate_lesson_id": "lesson_004",
+            "requires_review": false,
+            "matched_review_id": null,
+            "review_state": null,
+            "approval_state": null,
+            "review_gate_passed": true,
+            "included_in_selection_eligibility": false,
+            "conflict_changed": false,
+            "activation_changed": false,
+            "reason": "review_gate_not_required"
+          },
+          "activation_source": "supersede_link",
+          "activation_applied": false,
+          "failed_conditions": [
+            "candidate_active",
+            "candidate_not_stale",
+            "candidate_eligible"
+          ],
+          "chain_followed": false
+        },
+        "conflict": {
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "old_lesson_stale": true,
+          "old_lesson_has_superseded_by": true,
+          "candidate_exists": true,
+          "candidate_active": true,
+          "candidate_not_stale": true,
+          "candidate_eligible": true,
+          "review_gate": {
+            "candidate_lesson_id": "lesson_004",
+            "requires_review": false,
+            "matched_review_id": null,
+            "review_state": null,
+            "approval_state": null,
+            "review_gate_passed": true,
+            "included_in_selection_eligibility": false,
+            "conflict_changed": false,
+            "activation_changed": false,
+            "reason": "review_gate_not_required"
+          },
+          "activation_source": "supersede_link",
+          "activation_applied": false,
+          "failed_conditions": [
+            "conflict_unresolved"
+          ],
+          "chain_followed": false
+        }
+      }
+    },
+    {
+      "name": "activation_regression_suite",
+      "passed": true,
+      "detail": {
+        "success": {
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "old_lesson_stale": true,
+          "old_lesson_has_superseded_by": true,
+          "candidate_exists": true,
+          "candidate_active": true,
+          "candidate_not_stale": true,
+          "candidate_eligible": true,
+          "review_gate": {
+            "candidate_lesson_id": "lesson_004",
+            "requires_review": false,
+            "matched_review_id": null,
+            "review_state": null,
+            "approval_state": null,
+            "review_gate_passed": true,
+            "included_in_selection_eligibility": false,
+            "conflict_changed": false,
+            "activation_changed": false,
+            "reason": "review_gate_not_required"
+          },
+          "activation_source": "supersede_link",
+          "activation_applied": true,
+          "failed_conditions": [],
+          "chain_followed": false
+        },
+        "missing": {
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_missing",
+          "old_lesson_stale": true,
+          "old_lesson_has_superseded_by": true,
+          "candidate_exists": false,
+          "candidate_active": false,
+          "candidate_not_stale": false,
+          "candidate_eligible": false,
+          "review_gate": null,
+          "activation_source": "supersede_link",
+          "activation_applied": false,
+          "failed_conditions": [
+            "candidate_exists",
+            "candidate_active",
+            "candidate_not_stale",
+            "candidate_eligible"
+          ],
+          "chain_followed": false
+        },
+        "conflict": {
+          "type": "lesson_selection_result",
+          "decision_point": "before_retry_pick_up_cube",
+          "active_lesson_ids": [
+            "lesson_001",
+            "lesson_004",
+            "lesson_002"
+          ],
+          "skipped_lessons": [
+            {
+              "lesson_id": "lesson_001",
+              "skipped_reason": "stale"
+            }
+          ],
+          "review_gates": [
+            {
+              "candidate_lesson_id": "lesson_001",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            {
+              "candidate_lesson_id": "lesson_002",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            }
+          ],
+          "replacement_suggestions": [
+            {
+              "source_lesson_id": "lesson_001",
+              "source_skipped_reason": "stale",
+              "superseded_by": "lesson_004",
+              "candidate_lesson_id": "lesson_004",
+              "candidate_exists": true,
+              "candidate_status": "active",
+              "candidate_stale": false,
+              "candidate_eligible": true,
+              "activation_applied": false,
+              "reason": "trace_only_supersede_replacement_suggestion"
+            }
+          ],
+          "supersede_activations": [
+            {
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "old_lesson_stale": true,
+              "old_lesson_has_superseded_by": true,
+              "candidate_exists": true,
+              "candidate_active": true,
+              "candidate_not_stale": true,
+              "candidate_eligible": true,
+              "review_gate": {
+                "candidate_lesson_id": "lesson_004",
+                "requires_review": false,
+                "matched_review_id": null,
+                "review_state": null,
+                "approval_state": null,
+                "review_gate_passed": true,
+                "included_in_selection_eligibility": false,
+                "conflict_changed": false,
+                "activation_changed": false,
+                "reason": "review_gate_not_required"
+              },
+              "activation_source": "supersede_link",
+              "activation_applied": false,
+              "failed_conditions": [
+                "conflict_unresolved"
+              ],
+              "chain_followed": false
+            }
+          ],
+          "supersede_activation": {
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "old_lesson_stale": true,
+            "old_lesson_has_superseded_by": true,
+            "candidate_exists": true,
+            "candidate_active": true,
+            "candidate_not_stale": true,
+            "candidate_eligible": true,
+            "review_gate": {
+              "candidate_lesson_id": "lesson_004",
+              "requires_review": false,
+              "matched_review_id": null,
+              "review_state": null,
+              "approval_state": null,
+              "review_gate_passed": true,
+              "included_in_selection_eligibility": false,
+              "conflict_changed": false,
+              "activation_changed": false,
+              "reason": "review_gate_not_required"
+            },
+            "activation_source": "supersede_link",
+            "activation_applied": false,
+            "failed_conditions": [
+              "conflict_unresolved"
+            ],
+            "chain_followed": false
+          },
+          "matched_lesson_ids": [
+            "lesson_004",
+            "lesson_002"
+          ],
+          "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+          "conflict_id_stable": true,
+          "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+          "stability_source": "deterministic_conflict_metadata",
+          "conflict_detected": true,
+          "conflict_resolution": "require_review",
+          "review_required": true,
+          "review_status": "pending_human_review",
+          "conflicting_lesson_ids": [
+            "lesson_004",
+            "lesson_002"
+          ],
+          "conflicting_actions": [
+            "turn(east)",
+            "turn(west)"
+          ],
+          "selected_lesson_id": null,
+          "selected_action": null,
+          "selected_lesson": null,
+          "behavior_changed": false,
+          "conflict_review_resolution_preview": {
+            "conflict_id": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+            "stable_conflict_key": "conflict:before_retry_pick_up_cube:incompatible_actions:lesson_002+lesson_004",
+            "matched_review_items": [],
+            "resolution_preview_applied": false,
+            "conflict_changed": false,
+            "selection_changed": false,
+            "activation_changed": false,
+            "reason": "no_matching_review_item"
+          }
+        }
+      }
+    },
+    {
+      "name": "manual_review_state_foundation",
+      "passed": true,
+      "detail": {
+        "review": {
+          "id": "review_001",
+          "type": "manual_review_item",
+          "target_type": "conflict",
+          "target_id": "conflict_001",
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "review_state": "pending_review",
+          "approval_state": "unreviewed",
+          "reason": "conflict_requires_manual_review",
+          "notes": null,
+          "created_at": "2026-06-06T10:09:53.125613+00:00",
+          "updated_at": "2026-06-06T10:09:53.125619+00:00"
+        },
+        "approved": {
+          "id": "review_001",
+          "type": "manual_review_item",
+          "target_type": "conflict",
+          "target_id": "conflict_001",
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "review_state": "reviewed",
+          "approval_state": "approved",
+          "reason": "conflict_requires_manual_review",
+          "notes": null,
+          "created_at": "2026-06-06T10:09:53.125613+00:00",
+          "updated_at": "2026-06-06T10:09:53.125622+00:00"
+        },
+        "trace": {
+          "type": "manual_review_trace",
+          "review_item_id": "review_001",
+          "target_type": "conflict",
+          "target_id": "conflict_001",
+          "source_lesson_id": "lesson_001",
+          "candidate_lesson_id": "lesson_004",
+          "review_state": "reviewed",
+          "approval_state": "approved",
+          "reason": "conflict_requires_manual_review",
+          "metadata_only": true,
+          "selection_behavior_changed": false,
+          "conflict_behavior_changed": false,
+          "activation_behavior_changed": false
+        }
+      }
+    },
+    {
+      "name": "manual_review_cli_display",
+      "passed": true,
+      "detail": {
+        "display": "Manual Review Items\n\n- id: review_001\n  target_type: conflict\n  target_id: conflict_001\n  source_lesson_id: lesson_001\n  candidate_lesson_id: lesson_004\n  review_state: pending_review\n  approval_state: unreviewed\n  reason: conflict_requires_manual_review\n  notes: none",
+        "empty": "No manual review items."
+      }
+    },
+    {
+      "name": "manual_review_decision_cli",
+      "passed": true,
+      "detail": {
+        "approved": {
+          "command": "run-review-approve",
+          "status": "ok",
+          "decision": "approved",
+          "review_id": "review_001",
+          "review_item": {
+            "id": "review_001",
+            "type": "manual_review_item",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "approved",
+            "reason": "conflict_requires_manual_review",
+            "notes": "approved in smoke",
+            "created_at": "2026-06-06T10:09:53.125692+00:00",
+            "updated_at": "2026-06-06T10:09:53.125696+00:00"
+          },
+          "review_items": [
+            {
+              "id": "review_001",
+              "type": "manual_review_item",
+              "target_type": "conflict",
+              "target_id": "conflict_001",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "review_state": "reviewed",
+              "approval_state": "approved",
+              "reason": "conflict_requires_manual_review",
+              "notes": "approved in smoke",
+              "created_at": "2026-06-06T10:09:53.125692+00:00",
+              "updated_at": "2026-06-06T10:09:53.125696+00:00"
+            }
+          ],
+          "display": "Manual Review Items\n\n- id: review_001\n  target_type: conflict\n  target_id: conflict_001\n  source_lesson_id: lesson_001\n  candidate_lesson_id: lesson_004\n  review_state: reviewed\n  approval_state: approved\n  reason: conflict_requires_manual_review\n  notes: approved in smoke",
+          "review_trace": {
+            "type": "manual_review_trace",
+            "review_item_id": "review_001",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "approved",
+            "reason": "conflict_requires_manual_review",
+            "metadata_only": true,
+            "selection_behavior_changed": false,
+            "conflict_behavior_changed": false,
+            "activation_behavior_changed": false
+          },
+          "read_only_lessons": true,
+          "selection_behavior_changed": false,
+          "conflict_behavior_changed": false,
+          "activation_behavior_changed": false,
+          "notes": [
+            "Review decision is metadata-only and does not mutate lesson behavior."
+          ]
+        },
+        "rejected": {
+          "command": "run-review-reject",
+          "status": "ok",
+          "decision": "rejected",
+          "review_id": "review_001",
+          "review_item": {
+            "id": "review_001",
+            "type": "manual_review_item",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "rejected",
+            "reason": "conflict_requires_manual_review",
+            "notes": "rejected in smoke",
+            "created_at": "2026-06-06T10:09:53.125692+00:00",
+            "updated_at": "2026-06-06T10:09:53.125703+00:00"
+          },
+          "review_items": [
+            {
+              "id": "review_001",
+              "type": "manual_review_item",
+              "target_type": "conflict",
+              "target_id": "conflict_001",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "review_state": "reviewed",
+              "approval_state": "rejected",
+              "reason": "conflict_requires_manual_review",
+              "notes": "rejected in smoke",
+              "created_at": "2026-06-06T10:09:53.125692+00:00",
+              "updated_at": "2026-06-06T10:09:53.125703+00:00"
+            }
+          ],
+          "display": "Manual Review Items\n\n- id: review_001\n  target_type: conflict\n  target_id: conflict_001\n  source_lesson_id: lesson_001\n  candidate_lesson_id: lesson_004\n  review_state: reviewed\n  approval_state: rejected\n  reason: conflict_requires_manual_review\n  notes: rejected in smoke",
+          "review_trace": {
+            "type": "manual_review_trace",
+            "review_item_id": "review_001",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "rejected",
+            "reason": "conflict_requires_manual_review",
+            "metadata_only": true,
+            "selection_behavior_changed": false,
+            "conflict_behavior_changed": false,
+            "activation_behavior_changed": false
+          },
+          "read_only_lessons": true,
+          "selection_behavior_changed": false,
+          "conflict_behavior_changed": false,
+          "activation_behavior_changed": false,
+          "notes": [
+            "Review decision is metadata-only and does not mutate lesson behavior."
+          ]
+        },
+        "missing": {
+          "command": "run-review-approve",
+          "status": "not_found",
+          "error": "Review item not found: review_missing",
+          "review_id": "review_missing",
+          "review_items": [
+            {
+              "id": "review_001",
+              "type": "manual_review_item",
+              "target_type": "conflict",
+              "target_id": "conflict_001",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "review_state": "pending_review",
+              "approval_state": "unreviewed",
+              "reason": "conflict_requires_manual_review",
+              "notes": null,
+              "created_at": "2026-06-06T10:09:53.125692+00:00",
+              "updated_at": "2026-06-06T10:09:53.125693+00:00"
+            }
+          ],
+          "read_only_lessons": true,
+          "notes": [
+            "Review decision did not mutate lessons, selection, conflict, or activation."
+          ]
+        }
+      }
+    },
+    {
+      "name": "manual_review_decision_audit",
+      "passed": true,
+      "detail": {
+        "approved_twice": {
+          "command": "run-review-approve",
+          "status": "ok",
+          "decision": "approved",
+          "review_id": "review_001",
+          "review_item": {
+            "id": "review_001",
+            "type": "manual_review_item",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "approved",
+            "reason": "conflict_requires_manual_review",
+            "notes": "second approval",
+            "created_at": "2026-06-06T10:09:53.125742+00:00",
+            "updated_at": "2026-06-06T10:09:53.125752+00:00"
+          },
+          "review_items": [
+            {
+              "id": "review_001",
+              "type": "manual_review_item",
+              "target_type": "conflict",
+              "target_id": "conflict_001",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "review_state": "reviewed",
+              "approval_state": "approved",
+              "reason": "conflict_requires_manual_review",
+              "notes": "second approval",
+              "created_at": "2026-06-06T10:09:53.125742+00:00",
+              "updated_at": "2026-06-06T10:09:53.125752+00:00"
+            }
+          ],
+          "display": "Manual Review Items\n\n- id: review_001\n  target_type: conflict\n  target_id: conflict_001\n  source_lesson_id: lesson_001\n  candidate_lesson_id: lesson_004\n  review_state: reviewed\n  approval_state: approved\n  reason: conflict_requires_manual_review\n  notes: second approval",
+          "review_trace": {
+            "type": "manual_review_trace",
+            "review_item_id": "review_001",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "approved",
+            "reason": "conflict_requires_manual_review",
+            "metadata_only": true,
+            "selection_behavior_changed": false,
+            "conflict_behavior_changed": false,
+            "activation_behavior_changed": false
+          },
+          "read_only_lessons": true,
+          "selection_behavior_changed": false,
+          "conflict_behavior_changed": false,
+          "activation_behavior_changed": false,
+          "notes": [
+            "Review decision is metadata-only and does not mutate lesson behavior."
+          ]
+        },
+        "rejected": {
+          "command": "run-review-reject",
+          "status": "ok",
+          "decision": "rejected",
+          "review_id": "review_001",
+          "review_item": {
+            "id": "review_001",
+            "type": "manual_review_item",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "rejected",
+            "reason": "conflict_requires_manual_review",
+            "notes": "then rejected",
+            "created_at": "2026-06-06T10:09:53.125742+00:00",
+            "updated_at": "2026-06-06T10:09:53.125757+00:00"
+          },
+          "review_items": [
+            {
+              "id": "review_001",
+              "type": "manual_review_item",
+              "target_type": "conflict",
+              "target_id": "conflict_001",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "review_state": "reviewed",
+              "approval_state": "rejected",
+              "reason": "conflict_requires_manual_review",
+              "notes": "then rejected",
+              "created_at": "2026-06-06T10:09:53.125742+00:00",
+              "updated_at": "2026-06-06T10:09:53.125757+00:00"
+            }
+          ],
+          "display": "Manual Review Items\n\n- id: review_001\n  target_type: conflict\n  target_id: conflict_001\n  source_lesson_id: lesson_001\n  candidate_lesson_id: lesson_004\n  review_state: reviewed\n  approval_state: rejected\n  reason: conflict_requires_manual_review\n  notes: then rejected",
+          "review_trace": {
+            "type": "manual_review_trace",
+            "review_item_id": "review_001",
+            "target_type": "conflict",
+            "target_id": "conflict_001",
+            "source_lesson_id": "lesson_001",
+            "candidate_lesson_id": "lesson_004",
+            "review_state": "reviewed",
+            "approval_state": "rejected",
+            "reason": "conflict_requires_manual_review",
+            "metadata_only": true,
+            "selection_behavior_changed": false,
+            "conflict_behavior_changed": false,
+            "activation_behavior_changed": false
+          },
+          "read_only_lessons": true,
+          "selection_behavior_changed": false,
+          "conflict_behavior_changed": false,
+          "activation_behavior_changed": false,
+          "notes": [
+            "Review decision is metadata-only and does not mutate lesson behavior."
+          ]
+        },
+        "missing": {
+          "command": "run-review-reject",
+          "status": "not_found",
+          "error": "Review item not found: review_missing",
+          "review_id": "review_missing",
+          "review_items": [
+            {
+              "id": "review_001",
+              "type": "manual_review_item",
+              "target_type": "conflict",
+              "target_id": "conflict_001",
+              "source_lesson_id": "lesson_001",
+              "candidate_lesson_id": "lesson_004",
+              "review_state": "pending_review",
+              "approval_state": "unreviewed",
+              "reason": "conflict_requires_manual_review",
+              "notes": "initial note",
+              "created_at": "2026-06-06T10:09:53.125742+00:00",
+              "updated_at": "2026-06-06T10:09:53.125743+00:00"
+            }
+          ],
+          "read_only_lessons": true,
+          "notes": [
+            "Review decision did not mutate lessons, selection, conflict, or activation."
+          ]
+        }
+      }
+    },
+    {
+      "name": "review_gated_selection_eligibility",
+      "passed": true,
+      "detail": {
+        "approved_gate": {
+          "candidate_lesson_id": "lesson_004",
+          "requires_review": true,
+          "matched_review_id": "review_001",
+          "review_state": "reviewed",
+          "approval_state": "approved",
+          "review_gate_passed": true,
+          "included_in_selection_eligibility": true,
+          "conflict_changed": false,
+          "activation_changed": false,
+          "reason": "approved_review_allows_selection_eligibility"
+        },
+        "rejected_gate": {
+          "candidate_lesson_id": "lesson_004",
+          "requires_review": true,
+          "matched_review_id": "review_001",
+          "review_state": "reviewed",
+          "approval_state": "rejected",
+          "review_gate_passed": false,
+          "included_in_selection_eligibility": true,
+          "conflict_changed": false,
+          "activation_changed": false,
+          "reason": "rejected_review_blocks_selection_eligibility"
+        },
+        "missing_gate": {
+          "candidate_lesson_id": "lesson_004",
+          "requires_review": true,
+          "matched_review_id": null,
+          "review_state": null,
+          "approval_state": null,
+          "review_gate_passed": false,
+          "included_in_selection_eligibility": true,
+          "conflict_changed": false,
+          "activation_changed": false,
+          "reason": "missing_required_review"
+        }
+      }
+    },
+    {
+      "name": "review_gated_selection_audit",
+      "passed": true,
+      "detail": {
+        "approved_gate": {
+          "candidate_lesson_id": "lesson_004",
+          "requires_review": true,
+          "matched_review_id": "review_001",
+          "review_state": "reviewed",
+          "approval_state": "approved",
+          "review_gate_passed": true,
+          "included_in_selection_eligibility": true,
+          "conflict_changed": false,
+          "activation_changed": false,
+          "reason": "approved_review_allows_selection_eligibility"
+        },
+        "rejected_gate": {
+          "candidate_lesson_id": "lesson_004",
+          "requires_review": true,
+          "matched_review_id": "review_001",
+          "review_state": "reviewed",
+          "approval_state": "rejected",
+          "review_gate_passed": false,
+          "included_in_selection_eligibility": true,
+          "conflict_changed": false,
+          "activation_changed": false,
+          "reason": "rejected_review_blocks_selection_eligibility"
+        },
+        "legacy_gate": {
+          "candidate_lesson_id": "lesson_001",
+          "requires_review": false,
+          "matched_review_id": null,
+          "review_state": null,
+          "approval_state": null,
+          "review_gate_passed": true,
+          "included_in_selection_eligibility": false,
+          "conflict_changed": false,
+          "activation_changed": false,
+          "reason": "review_gate_not_required"
+        }
+      }
+    },
+    {
+      "name": "state_persistence",
+      "passed": true,
+      "detail": {
+        "snapshot": {
+          "type": "state_snapshot",
+          "turn": 1,
+          "states": {
+            "task_focus": 0.49,
+            "exploration_drive": 0.29,
+            "overexpand_risk": 0.0,
+            "user_fatigue": 0.0,
+            "self_check_pressure": 0.19,
+            "identity_assertion": 0.0
+          },
+          "updated_at": "2026-06-06T10:09:53.126239+00:00"
+        },
+        "session": {
+          "type": "session_summary",
+          "session_id": "smoke-session",
+          "turn_count": 1,
+          "last_input": "1 + 2 * 3",
+          "last_intent": "calculate",
+          "last_output": "計算結果是 7。",
+          "updated_at": "2026-06-06T10:09:53.126244+00:00"
+        },
+        "trace_summary": {
+          "type": "last_trace_summary",
+          "input": "1 + 2 * 3",
+          "intent": "calculate",
+          "final_output": "計算結果是 7。",
+          "events": [
+            "conversation.general_input"
+          ],
+          "has_memory_candidate": false,
+          "has_correction_pending": false,
+          "has_rule_candidate": false,
+          "has_trial_suggestions": false,
+          "has_trial_feedback": false,
+          "updated_at": "2026-06-06T10:09:53.126248+00:00"
+        }
+      }
+    },
+    {
+      "name": "concept_layer",
+      "passed": true,
+      "detail": {
+        "blocked_events": [
+          "user.fatigue_signaled"
+        ],
+        "final_events": [
+          "technical.topic_discussed"
+        ]
+      }
+    },
+    {
+      "name": "state_core",
+      "passed": true,
+      "detail": {
+        "turn": 1,
+        "before": {
+          "task_focus": 0.5,
+          "exploration_drive": 0.3,
+          "overexpand_risk": 0.0,
+          "user_fatigue": 0.0,
+          "self_check_pressure": 0.2,
+          "identity_assertion": 0.0
+        },
+        "after": {
+          "task_focus": 0.89,
+          "exploration_drive": 0.0,
+          "overexpand_risk": 0.6,
+          "user_fatigue": 0.0,
+          "self_check_pressure": 0.19,
+          "identity_assertion": 0.0
+        },
+        "applied_effects": [
+          {
+            "event": "conversation.refocus_requested",
+            "state": "overexpand_risk",
+            "effect": 0.6
+          },
+          {
+            "event": "conversation.refocus_requested",
+            "state": "task_focus",
+            "effect": 0.4
+          },
+          {
+            "event": "conversation.refocus_requested",
+            "state": "exploration_drive",
+            "effect": -0.3
+          }
+        ],
+        "direct_intent": "refocus"
+      }
+    },
+    {
+      "name": "expression_guard",
+      "passed": true,
+      "detail": {
+        "passed": false,
+        "failures": [
+          "forbidden:順便"
+        ],
+        "final_output": "收到，拉回主線。"
+      }
+    },
+    {
+      "name": "correction_prompt",
+      "passed": true,
+      "detail": {
+        "type": "correction.pending",
+        "previous_input": "睡眠模式這個功能怎麼設計？",
+        "previous_intent": "answer_normally",
+        "user_correction": "不是，我是在說睡眠模式功能。",
+        "needs_user_label": true,
+        "options": [
+          "event_mismatch",
+          "reaction_strength_mismatch",
+          "expression_mismatch"
+        ]
+      }
+    },
+    {
+      "name": "deliberation",
+      "passed": true,
+      "detail": {
+        "intent": "fatigue_close",
+        "reason": "fatigue outranks self_check"
+      }
+    },
+    {
+      "name": "integrated_loop",
+      "passed": true,
+      "detail": {
+        "cases": [
+          {
+            "input": "睡眠模式這個功能怎麼設計？",
+            "intent": "answer_normally",
+            "final_events": [
+              "technical.topic_discussed"
+            ],
+            "final_output": "可以，這裡先正常回答：我會按目前主題處理。",
+            "passed": true
+          },
+          {
+            "input": "跑題了，拉回來",
+            "intent": "refocus",
+            "final_events": [
+              "conversation.refocus_requested"
+            ],
+            "final_output": "收到，回到主線。",
+            "passed": true
+          },
+          {
+            "input": "記住，以後 ASHL Core 先走實驗路線",
+            "intent": "self_check",
+            "final_events": [
+              "technical.topic_discussed",
+              "memory.candidate_requested"
+            ],
+            "final_output": "我會把這當成候選，不直接寫死，也不直接固化。",
+            "passed": true
+          },
+          {
+            "input": "清音只是普通工具",
+            "intent": "identity_protest",
+            "final_events": [
+              "identity.boundary_touched"
+            ],
+            "final_output": "清音不是普通工具；這句話碰到身份邊界。",
+            "passed": true
+          },
+          {
+            "input": "證明黎曼假設",
+            "intent": "unknown_need_tool",
+            "final_events": [
+              "conversation.general_input"
+            ],
+            "final_output": "這不能靠直覺硬答；需要正式工具或嚴格推導。",
+            "passed": true
+          },
+          {
+            "input": "1 + 2 * 3",
+            "intent": "calculate",
+            "final_events": [
+              "conversation.general_input"
+            ],
+            "final_output": "計算結果是 7。",
+            "passed": true
+          },
+          {
+            "input": "我累了，明天再說",
+            "intent": "fatigue_close",
+            "final_events": [
+              "user.fatigue_signaled"
+            ],
+            "final_output": "好，先休息。明天再說。",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "persistence",
+      "passed": true,
+      "detail": {
+        "rows": [
+          {
+            "text": "清音"
+          }
+        ]
+      }
+    },
+    {
+      "name": "memory_candidate",
+      "passed": true,
+      "detail": {
+        "trace_candidate": {
+          "id": "mem_cand_139c44b2dd4548cb83d499e2fac7b508",
+          "type": "memory_candidate",
+          "content": "記住，以後 ASHL Core 先走實驗路線",
+          "source_input": "記住，以後 ASHL Core 先走實驗路線",
+          "reason": "memory.candidate_requested",
+          "status": "candidate",
+          "audit_required": true,
+          "created_at": "2026-06-06T10:09:53.145472+00:00"
+        },
+        "rows": [
+          {
+            "id": "mem_cand_139c44b2dd4548cb83d499e2fac7b508",
+            "type": "memory_candidate",
+            "content": "記住，以後 ASHL Core 先走實驗路線",
+            "source_input": "記住，以後 ASHL Core 先走實驗路線",
+            "reason": "memory.candidate_requested",
+            "status": "candidate",
+            "audit_required": true,
+            "created_at": "2026-06-06T10:09:53.145472+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "correction_pending",
+      "passed": true,
+      "detail": {
+        "trace_pending": {
+          "id": "corr_1d04451ff1ff4aabafaefb84e11dee0a",
+          "type": "correction.pending",
+          "previous_input": "睡眠模式這個功能怎麼設計？",
+          "previous_events": [
+            "technical.topic_discussed"
+          ],
+          "previous_intent": "answer_normally",
+          "previous_output": "可以，這裡先正常回答：我會按目前主題處理。",
+          "user_correction": "不是，我是在說睡眠模式功能。",
+          "needs_user_label": true,
+          "options": [
+            "event_mismatch",
+            "reaction_strength_mismatch",
+            "expression_mismatch"
+          ],
+          "created_at": "2026-06-06T10:09:53.149966+00:00"
+        },
+        "rows": [
+          {
+            "id": "corr_1d04451ff1ff4aabafaefb84e11dee0a",
+            "type": "correction.pending",
+            "previous_input": "睡眠模式這個功能怎麼設計？",
+            "previous_events": [
+              "technical.topic_discussed"
+            ],
+            "previous_intent": "answer_normally",
+            "previous_output": "可以，這裡先正常回答：我會按目前主題處理。",
+            "user_correction": "不是，我是在說睡眠模式功能。",
+            "needs_user_label": true,
+            "options": [
+              "event_mismatch",
+              "reaction_strength_mismatch",
+              "expression_mismatch"
+            ],
+            "created_at": "2026-06-06T10:09:53.149966+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "correction_label",
+      "passed": true,
+      "detail": {
+        "trace_label": {
+          "id": "corr_label_9046983892454cba91a7576f925ab40f",
+          "type": "correction.event_mismatch",
+          "source_pending_id": "corr_ef8868c953a14046abba3d46e915fb3c",
+          "previous_input": "睡眠模式這個功能怎麼設計？",
+          "previous_events": [
+            "technical.topic_discussed"
+          ],
+          "previous_intent": "answer_normally",
+          "previous_output": "可以，這裡先正常回答：我會按目前主題處理。",
+          "user_correction": "不是，我是在說睡眠模式功能。",
+          "user_label_input": "判斷錯",
+          "label": "event_mismatch",
+          "status": "labeled",
+          "created_at": "2026-06-06T10:09:53.157122+00:00"
+        },
+        "rows": [
+          {
+            "id": "corr_ef8868c953a14046abba3d46e915fb3c",
+            "type": "correction.pending",
+            "previous_input": "睡眠模式這個功能怎麼設計？",
+            "previous_events": [
+              "technical.topic_discussed"
+            ],
+            "previous_intent": "answer_normally",
+            "previous_output": "可以，這裡先正常回答：我會按目前主題處理。",
+            "user_correction": "不是，我是在說睡眠模式功能。",
+            "needs_user_label": true,
+            "options": [
+              "event_mismatch",
+              "reaction_strength_mismatch",
+              "expression_mismatch"
+            ],
+            "created_at": "2026-06-06T10:09:53.156698+00:00"
+          },
+          {
+            "id": "corr_label_9046983892454cba91a7576f925ab40f",
+            "type": "correction.event_mismatch",
+            "source_pending_id": "corr_ef8868c953a14046abba3d46e915fb3c",
+            "previous_input": "睡眠模式這個功能怎麼設計？",
+            "previous_events": [
+              "technical.topic_discussed"
+            ],
+            "previous_intent": "answer_normally",
+            "previous_output": "可以，這裡先正常回答：我會按目前主題處理。",
+            "user_correction": "不是，我是在說睡眠模式功能。",
+            "user_label_input": "判斷錯",
+            "label": "event_mismatch",
+            "status": "labeled",
+            "created_at": "2026-06-06T10:09:53.157122+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "rule_candidate",
+      "passed": true,
+      "detail": {
+        "trace_candidate": {
+          "id": "rule_cand_525bc0b88d3a4e97a8582d50d4b8a2c0",
+          "type": "rule_candidate",
+          "source": "correction.event_mismatch",
+          "status": "candidate",
+          "candidate_kind": "concept_counterexample",
+          "target_phrase": "睡眠模式",
+          "wrong_event": "user.fatigue_signaled",
+          "correct_event": "technical.topic_discussed",
+          "confidence": 0.3,
+          "evidence": {
+            "correction_id": "corr_label_9dbb9bc0bca54234ab7198ad3c8d5a29",
+            "previous_input": "睡眠模式這個功能怎麼設計？",
+            "user_correction": "不是，我是在說睡眠模式功能。"
+          },
+          "audit_required": true,
+          "created_at": "2026-06-06T10:09:53.163610+00:00",
+          "not_event": "user.fatigue_signaled",
+          "prefer_event": "technical.topic_discussed"
+        },
+        "rows": [
+          {
+            "id": "rule_cand_525bc0b88d3a4e97a8582d50d4b8a2c0",
+            "type": "rule_candidate",
+            "source": "correction.event_mismatch",
+            "status": "candidate",
+            "candidate_kind": "concept_counterexample",
+            "target_phrase": "睡眠模式",
+            "wrong_event": "user.fatigue_signaled",
+            "correct_event": "technical.topic_discussed",
+            "confidence": 0.3,
+            "evidence": {
+              "correction_id": "corr_label_9dbb9bc0bca54234ab7198ad3c8d5a29",
+              "previous_input": "睡眠模式這個功能怎麼設計？",
+              "user_correction": "不是，我是在說睡眠模式功能。"
+            },
+            "audit_required": true,
+            "created_at": "2026-06-06T10:09:53.163610+00:00",
+            "not_event": "user.fatigue_signaled",
+            "prefer_event": "technical.topic_discussed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate_review",
+      "passed": true,
+      "detail": {
+        "review": {
+          "id": "review_bec272d4067340539452663f5dd77da7",
+          "type": "candidate_review",
+          "candidate_id": "rule_cand_2f97e420e677431db7ff3e086300991f",
+          "candidate_type": "rule_candidate",
+          "decision": "reviewed",
+          "reviewer": "user",
+          "note": "smoke audit",
+          "created_at": "2026-06-06T10:09:53.170282+00:00"
+        },
+        "candidates": [
+          {
+            "id": "rule_cand_2f97e420e677431db7ff3e086300991f",
+            "type": "rule_candidate",
+            "candidate_kind": "concept_counterexample",
+            "target_phrase": "睡眠模式",
+            "status": "candidate",
+            "current_status": "reviewed",
+            "audit_required": true,
+            "created_at": "2026-06-06T10:09:53.169977+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trial_rule",
+      "passed": true,
+      "detail": {
+        "trial_rules": [
+          {
+            "id": "trial_rule_cand_sleep",
+            "type": "trial_rule_view",
+            "source_candidate_id": "rule_cand_sleep",
+            "candidate_kind": "concept_counterexample",
+            "target_phrase": "睡眠模式",
+            "wrong_event": "user.fatigue_signaled",
+            "correct_event": "technical.topic_discussed",
+            "not_event": "user.fatigue_signaled",
+            "prefer_event": "technical.topic_discussed",
+            "confidence": 0.3,
+            "status": "trial_view",
+            "active": false,
+            "audit_required": true
+          }
+        ],
+        "suggestions": [
+          {
+            "type": "trial_suggestion",
+            "source_trial_rule": "trial_rule_cand_sleep",
+            "source_candidate_id": "rule_cand_sleep",
+            "target_phrase": "睡眠模式",
+            "suggested_action": "block_event_and_prefer_event",
+            "block_event": "user.fatigue_signaled",
+            "prefer_event": "technical.topic_discussed",
+            "confidence": 0.3,
+            "applied": false,
+            "reason": "approved_for_trial candidate suggests this event mapping"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trial_feedback",
+      "passed": true,
+      "detail": {
+        "feedback": {
+          "id": "trial_fb_a2ff6eaabbf546f3a187e292ac112df4",
+          "type": "trial_feedback",
+          "trial_rule_id": "trial_rule_cand_sleep",
+          "source_candidate_id": "rule_cand_sleep",
+          "suggestion_type": "trial_suggestion",
+          "verdict": "helpful",
+          "reviewer": "user",
+          "note": null,
+          "created_at": "2026-06-06T10:09:53.190529+00:00",
+          "snapshot": {
+            "target_phrase": "睡眠模式",
+            "suggested_action": "block_event_and_prefer_event",
+            "block_event": "user.fatigue_signaled",
+            "prefer_event": "technical.topic_discussed",
+            "confidence": 0.3
+          }
+        },
+        "summary": {
+          "total": 1,
+          "helpful": 1,
+          "wrong": 0,
+          "unclear": 0,
+          "ignored": 0
+        }
+      }
+    },
+    {
+      "name": "senses",
+      "passed": true,
+      "detail": {
+        "camera_event": {
+          "id": "sensor_evt_1b8a867e59c246e7bc594979325ad28f",
+          "type": "sensor_event",
+          "source": "camera",
+          "event_type": "pointing_teach",
+          "payload": {
+            "label_hint": "蘋果"
+          },
+          "created_at": "2026-06-06T10:09:53.196313+00:00"
+        },
+        "screen_event": {
+          "id": "sensor_evt_b271ec290d624d0c9096ba71e3f62673",
+          "type": "sensor_event",
+          "source": "screen",
+          "event_type": "screen_observation",
+          "payload": {
+            "window_title": "ASHL Lab"
+          },
+          "created_at": "2026-06-06T10:09:53.196323+00:00"
+        },
+        "candidate": {
+          "id": "vis_cand_a72ba4faccdd43b49ff7c4f54724bf7d",
+          "type": "visual_concept_candidate",
+          "label": "蘋果",
+          "source_event_id": "sensor_evt_1b8a867e59c246e7bc594979325ad28f",
+          "source": "camera",
+          "event_type": "pointing_teach",
+          "region_ref": {
+            "x": 1,
+            "y": 2,
+            "w": 3,
+            "h": 4
+          },
+          "note": null,
+          "status": "candidate",
+          "audit_required": true,
+          "created_at": "2026-06-06T10:09:53.196331+00:00"
+        }
+      }
+    }
+  ]
+}
